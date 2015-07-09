@@ -1,0 +1,29 @@
+book-model.js(function(window, document, undefined) {
+  var BookModel = {
+  	Pages = [],
+  	numPages = 0,
+  	currentPage = 0
+  };
+   
+   
+  BookModel.Pages = []
+
+  function newPage(){
+
+  } 
+
+  function getNextPage(){
+
+  } 
+
+  function getPrevPage(){
+
+  } 
+
+  function getPage(var num){
+
+  } 
+
+
+  window.BookModel = BookModel;
+})(this, this.document);
