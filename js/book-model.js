@@ -1,62 +1,34 @@
 (function(window, document, undefined) {
   var model = gapi.drive.realtime.Model
 
-  var BookModel = {
-  	numPages = 5,
-  	currentPage = 0
-  };
+/* TEST: Wed 7/8 Zheng
+I was going to create the book object in this file,
+however, becuase I was a bit confused about how
+it was going to fit together,
+ it ended up being in the file Util instead, with the intention of
+ migrating it back, of course, but that hasn't happened yet*/
+  // var BookModel = {
+  // 	numPages = 5,
+  // 	currentPage = 0
+  // };
    
-  function newBook(){
+  // function newBook(){
   	
-  }
+  // }
 
-  BookModel.Pages = []
+  // BookModel.Pages = []
 
-  function newPage(text){
-  		var string = model.createString();
-        string.setText('Welcome to the Quickstart App!');
-        model.getRoot().set('demo_string', string);
-  } 
+  // function getNextPage(){
+  // 	if (currentPage < numPages) {return getPage(currentPage)} else{ return getPage(currentPage + 1)};
+  // } 
 
+  // function getPrevPage(){
+  // 	if (currentPage > 0) {return getPage(currentPage - 1)} else{ return getPage(currentPage)};
+  // } 
 
-  function onFileInitialize(model) {
-        var string = model.createString();
-        string.setText('Welcome to the Quickstart App!');
-        model.getRoot().set('demo_string', string);
-      }
-
-      // After a file has been initialized and loaded, we can access the
-      // document. We will wire up the data model to the UI.
-      function onFileLoaded(doc) {
-        console.log("file loaded!")
-        /* LEARNING REALTIME NOTE:
-        root.get('name') gets the object with the given name at the root
-        root.set('name') sets the object with the given name at the root*/
-        var collaborativeString = doc.getModel().getRoot().get('demo_string');
-        wireTextBoxes(collaborativeString);
-      }
-
-      // Connects the text boxes to the collaborative string
-      function wireTextBoxes(collaborativeString) {
-        var textArea1 = document.getElementById('text_area_1');
-        var textArea2 = document.getElementById('text_area_2');
-        gapi.drive.realtime.databinding.bindString(collaborativeString, textArea1);
-        gapi.drive.realtime.databinding.bindString(collaborativeString, textArea2);
-        doc.getModel().getRoot().addEventListener(gapi.drive.realtime.ObjectChangedEvent, function(event){
-          //UPDATE PAGE
-        })
-
-  function getNextPage(){
-  	if (currentPage < numPages) {return getPage(currentPage)} else{ return getPage(currentPage + 1)};
-  } 
-
-  function getPrevPage(){
-  	if (currentPage > 0) {return getPage(currentPage - 1)} else{ return getPage(currentPage)};
-  } 
-
-  function getPage(var num){
-  	return BookModel.Pages[num];
-  } 
+  // function getPage(var num){
+  // 	return BookModel.Pages[num];
+  // } 
 
 
   window.BookModel = BookModel;
