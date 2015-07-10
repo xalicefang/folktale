@@ -1,5 +1,6 @@
 (function(window, document, undefined) {
-  var model = gapi.drive.realtime.Model
+  BookModel= {};
+  // var model = gapi.drive.realtime.Model
 
 /* TEST: Wed 7/8 Zheng
 I was going to create the book object in this file,
